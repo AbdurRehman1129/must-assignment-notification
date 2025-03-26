@@ -18,6 +18,8 @@ PASSWORD = get_env_var("PASSWORD")
 EMAIL_SENDER = get_env_var("EMAIL_SENDER")
 EMAIL_PASSWORD = get_env_var("EMAIL_PASSWORD")
 EMAIL_TO = get_env_var("EMAIL_TO")
+SESSION = get_env_var("SESSION")
+PROGRAM = get_env_var("PROGRAM")
 
 def login_and_get_session():
     session = requests.Session()
@@ -33,8 +35,8 @@ def login_and_get_session():
         "__VIEWSTATE": viewstate,
         "__VIEWSTATEGENERATOR": viewstategen,
         "__EVENTVALIDATION": eventvalidation,
-        "ddl_Session": "FA23",
-        "ddl_Program": "BSE",
+        "ddl_Session": SESSION,
+        "ddl_Program": PROGRAM,
         "txt_RollNo": ROLL_NO,
         "txt_Password": PASSWORD,
         "btn_StudentSignIn": "Sign In"

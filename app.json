@@ -4,7 +4,15 @@
     "repository": "https://github.com/AbdurRehman1129/must-assignment-notification",
     "env": {
       "ROLL_NO": {
-        "description": "Your university roll number",
+        "description": "Your university roll number (001)",
+        "required": true
+      },
+      "SESSION": {
+        "description": "Your university session (FA23)",
+        "required": true
+      },
+      "PROGRAM": {
+        "description": "Your university program (BSE)",
         "required": true
       },
       "PASSWORD": {
