@@ -67,7 +67,8 @@ def check_assignments():
                 assignment_title = columns[2].text.strip()
                 deadline = columns[3].text.strip()
                 assignments.append(f"Course: {course_title}, Assignment: {assignment_title}, Deadline: {deadline}")
-            send_email(assignments)
+            if assignments:
+                send_email(assignments)
         else:
             print("No pending assignments found.")
     else:
