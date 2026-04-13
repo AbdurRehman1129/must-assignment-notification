@@ -4,6 +4,10 @@ from bs4 import BeautifulSoup
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 def get_env_var(var_name):
     value = os.environ.get(var_name)
@@ -11,7 +15,7 @@ def get_env_var(var_name):
         raise ValueError(f"Missing environment variable: {var_name}")
     return value
 
-# Load credentials from Heroku Config Vars
+# Load credentials from .env file (locally) or Heroku Config Vars (production)
 CMS_URL = "https://cms.must.edu.pk:8082/login.aspx"
 ROLL_NO = get_env_var("ROLL_NO")
 PASSWORD = get_env_var("PASSWORD")
